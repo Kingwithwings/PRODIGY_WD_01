@@ -1,0 +1,612 @@
+*{
+    margin: 0;
+    padding : 0;
+   
+}
+
+.button-container {
+    display: flex;
+    background-color: #BA0C2F;
+    width: 100%;
+    height: 80px;
+    align-items: center;
+    justify-content: space-between;
+    
+    
+    position: fixed;
+   z-index: 1000;
+  }
+
+
+
+
+  #smallcontainer{
+    display: flex;
+    width :60%;
+    padding-right :0px;
+    margin-right: 20px;
+    justify-content: space-evenly;
+      
+
+  }
+  
+
+  .logo{
+    height: 55px;
+    width: 210px;
+    background-color:  #BA0C2F;
+    background-image: url(https://aryans.edu.in/wp-content/uploads/2023/07/logo.png);
+    background-size: cover;
+    margin-left: 40px;
+    
+  }
+  
+  .button {
+    /* outline: 0 !important; */
+    border: 0 !important;
+    /* width: 40px; */
+    height: 40px;
+    font-size: 15px;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    transition: all ease-in-out 0.3s;
+    cursor: pointer;
+    
+    
+  }
+  .button:hover {
+    transform: translateY(-4px);
+
+  }
+  .button2{
+    
+        /* outline: 0 !important; */
+        border: 0 !important;
+        /* width: 40px; */
+        height: 40px;
+        
+        background-color: transparent;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        transition: all ease-in-out 0.3s;
+        cursor: pointer;
+  }
+  .button2:hover {
+    transform: translateY(-4px);
+    display: block;
+
+  }
+
+  
+  
+  
+  
+  .icon {
+    font-size: 20px;
+  }
+
+  
+select{
+    height: 40px;
+    width : 60px;
+    color : white;
+    background-color: transparent;
+    border: none;
+}
+
+
+
+
+
+  
+  div a {
+    
+    text-decoration: none;
+    color: white;
+    font-size: 15px;
+    padding: 15px;
+    display:inline-block;
+   
+  }
+
+  .listed{
+    color:black;
+    font-size: 1rem;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  .listed:hover{
+    color : white;
+  }
+  
+  ul {
+    display: inline;
+    margin: 0;
+    padding: 0;
+  }
+  ul li {display: inline-block;}
+  ul li:hover {background-color : transparent;
+  }
+  ul li:hover ul {display: block;}
+  ul li ul {
+    position: absolute;
+    width: 250px;
+    display: none;
+  }
+  ul li ul li { 
+    background-color : white;
+    
+    display: block; 
+  }
+  ul li ul li a {display:block !important;} 
+  ul li ul li:hover {
+    background-color:#BA0C2F;
+    
+  }
+
+
+  /* animation code */
+
+
+  
+/* carousel */
+
+.carousel{
+  width: 100%;
+  height: 550px;
+  
+  overflow: hidden;
+  position: relative;
+}
+
+.carousel .list .item{
+  width: 50px;
+  height: 50px;
+  /* width : 180px;
+  height: 250px; */
+  position: absolute;
+  top: 80%;
+  transform: translateY(-70%);
+  left: 70%;
+  /* border-radius: 20px;  */
+  border-radius: 50%;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3); 
+  background-position: 50% 50%;
+  background-size: cover;
+  z-index: 100;
+  transition: 1s;
+}
+
+.carousel .list .item:nth-child(1),
+.carousel .list .item:nth-child(2){
+  top: 0;
+  left: 0;
+  transform: translate(0, 0);
+  border-radius: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.carousel .list .item:nth-child(3){
+  left: 67%;
+}
+
+.carousel .list .item:nth-child(4){
+  left: calc(67% + 200px);
+}
+
+.carousel .list .item:nth-child(5){
+  left: calc(67% + 400px);
+}
+
+.carousel .list .item:nth-child(6){
+  left: calc(67% + 600px);
+}
+
+.carousel .list .item:nth-child(n+7){
+  left: calc(67% + 800px);
+  opacity: 0;
+}
+
+
+
+
+
+.list .item .content{
+  position: absolute;
+  top: 50%;
+  left: 100px;
+  transform: translateY(-50%);
+  width: 400px;
+  text-align: left;
+  color: #fff;
+  display: none;
+}
+
+.list .item:nth-child(2) .content{
+  display: block;
+}
+
+.content .title{
+  font-size: 100px;
+  text-transform: uppercase;
+  color: #14ff72cb;
+  font-weight: bold;
+  line-height: 1;
+
+  opacity: 0;
+  animation: animate 1s ease-in-out 0.3s 1 forwards;
+}
+
+.content .name{
+  font-size: 100px;
+  text-transform: uppercase;
+  font-weight: bold;
+  line-height: 1;
+  text-shadow: 3px 4px 4px rgba(255, 255, 255, 0.8);
+
+  opacity: 0;
+  animation: animate 1s ease-in-out 0.6s 1 forwards;
+}
+
+.content .des{
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font-size: 18px;
+  margin-left: 5px;
+
+  opacity: 0;
+  animation: animate 1s ease-in-out 0.9s 1 forwards;
+}
+
+.content .btn{
+  margin-left: 5px;
+
+  opacity: 0;
+  animation: animate 1s ease-in-out 1.2s 1 forwards;
+}
+
+.content .btn button{
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  border: 2px solid #fff;
+}
+
+.content .btn button:nth-child(1){
+  margin-right: 15px;
+}
+
+.content .btn button:nth-child(2){
+  background: transparent;
+  color: #14ff72cb;
+  border: 2px solid #fff;
+  transition: 0.3s;
+}
+
+.content .btn button:nth-child(2):hover{
+  background-color: #14ff72cb;
+  color: #fff;
+  border-color: #14ff72cb;
+}
+
+
+@keyframes animate {
+  
+  from{
+      opacity: 0;
+      transform: translate(0, 100px);
+      filter: blur(33px);
+  }
+
+  to{
+      opacity: 1;
+      transform: translate(0);
+      filter: blur(0);
+  }
+}
+
+/* Carousel */
+
+
+
+
+
+
+/* next prev arrows */
+
+.arrows{
+  position: absolute;
+  top: 80%;
+  right: 52%;
+  z-index: 100;
+  width: 300px;
+  max-width: 30%;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  
+}
+
+.arrows button{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #BA0C2F;
+  color: #fff;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  font-family: monospace;
+  font-weight: bold;
+  transition: .5s;
+  cursor: pointer;
+}
+
+.arrows button:hover{
+  background: #fff;
+  color: #000;
+}
+
+
+/* time running */
+/* .carousel .timeRunning{
+  position: absolute;
+  z-index: 1000;
+  width: 0%;
+  height: 4px;
+  background-color: #14ff72cb;
+  left: 0;
+  top: 0;
+  animation: runningTime 7s linear 1 forwards;
+}
+
+@keyframes runningTime {
+  
+  from{width: 0%;}
+  to{width: 100%;}
+
+} */
+
+
+/* Responsive Design */
+
+@media screen and (max-width: 999px){
+  
+  header{
+      padding-left: 50px;
+  }
+
+  .list .item .content{
+      left: 50px;
+  }
+
+  .content .title, .content .name{
+      font-size: 70px;
+  }
+
+  .content .des{
+      font-size: 16px;
+  }
+
+}
+
+@media screen and (max-width: 690px){
+  header nav a{
+      font-size: 14px;
+      margin-right: 0;
+  }
+
+  .list .item .content{
+      top: 40%;
+  }
+
+  .content .title, .content .name{
+      font-size: 45px;
+  }
+
+  .content .btn button{
+      padding: 10px 15px;
+      font-size: 14px;
+  }
+}
+
+
+
+
+.lund{
+  height: 80px;
+  background-color:pink;
+  
+} 
+
+
+/* Photos */
+
+.students{
+  
+  height : 3100px;
+   background-image: url(https://thumbs.dreamstime.com/b/beautiful-abstract-background-wallpaper-triangles-shapes-eye-catching-colors-unique-door-travel-worlds-to-280400924.jpg); 
+  /* background-color: brown;*/
+  background-size: cover;
+} 
+
+
+ /* html,body{
+   width: 100%;
+  height: 100%; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #222; 
+
+
+} */
+
+.space{
+  height:100px;
+  
+}
+
+ .dignitaries{
+  height:100px;
+  width:90%;
+  margin: auto;
+  color: white;
+  
+ 
+  /* background-color: green; */
+ }
+ .dignitaries h1{
+  margin-left: 30px;
+  padding-top: 20px;
+ }
+ .dignitaries p{
+  margin-left: 30px;
+  margin-top: 10px;
+  font-size: 1.25rem;
+ }
+
+
+.wrapper{
+  
+  height: 400px;
+  width: 80%;
+  margin: auto;
+  
+  display: flex;
+  width: 90%;
+  justify-content: space-around;
+  align-items: center;
+  /* background-color: pink; */
+  border-radius: 8px;
+  
+  z-index: 1;
+} 
+.card{
+  height: 250px;
+  width: 300px;
+  
+  /* padding: 2rem 1rem ; */
+  background: #fff;
+  position:relative;
+  display: flex;
+  align-items: flex-end;
+  box-shadow: 0px 7px 10px rgba(0,0,0,0.5);
+  /* transition: 0.5s ease-in-out; */
+  transition: 0.5s ease-in-out;
+  border-radius: 20px;
+  z-index: 2;
+
+}
+img{
+  border-radius: 20px;
+}
+.card:hover{
+  transform: translateY(-10px to 10px);
+  height: 350px;
+  width: 450px;
+
+}
+.card::before{
+  content: "";
+  position: absolute;
+  top:0;
+  left:0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0,176,155,0.5),rgba(0,150,201,61,1) );
+  z-index: 2;
+  transition: 0.5s all;
+  opacity: 0;
+
+}
+.card:hover:before{
+  opacity: 1;
+}
+.card img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top:0 ;
+  left: 0;
+
+}
+ .info{
+  width : 90%;
+  position: relative;
+  z-index: 3;
+  color: white;
+  opacity: 0;
+  transform: translate(30px);
+  transition: 0.5s all;
+  margin: auto;
+  margin-bottom: 0;
+
+}
+.card:hover .info{
+  opacity: 1;
+  transform: translate(0px);
+
+}
+.card .info h1{
+   margin: 0;
+
+}
+.card .info p{
+  letter-spacing: 1px;
+  font-size: 15px;
+  margin-bottom: 10px;
+  
+
+}
+.card .info .btn{
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  background: #fff;
+  color: #000;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition:o.4s ease-in-out ;
+
+}
+.card .info .btn :hover{
+  box-shadow: 0px 7px 10px rgba(0,0,0,0.5);
+}
+
+
+.celebreities{
+  width: 100%;
+  height: 500px;
+  background-color: pink;
+  overflow: hidden;
+  position: relative;
+}
+
+.wrapper1{
+  
+  height: 400px;
+  width: 80%;
+  margin: auto;
+  
+  display: flex;
+  width: 90%;
+  justify-content: space-around;
+  align-items: center;
+  /* background-color: pink; */
+  border-radius: 8px;
+  
+  z-index: 1;
+} 
+
+
+/* slider */
+

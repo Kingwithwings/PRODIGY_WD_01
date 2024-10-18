@@ -1,0 +1,166 @@
+.slider {
+    position: relative;
+    width: 100%;
+    margin: 10px auto;
+    overflow: hidden;
+   
+  }
+  
+  .slides {
+    display: flex;
+    width: 90%;
+    height: 100%;
+    margin: auto;
+  }
+  
+  .slide {
+    width: 350px;
+    height: 400px;
+    /* display: block;
+    justify-content: center;
+    align-items: center; */
+    display: flex;
+    align-items: end;
+    font-size: 24px;
+    transition: opacity 0.5s, transform 0.5s;
+    background-size: cover;
+    border-radius: 20px;
+     transition: .95s; 
+     
+  }
+   .con {
+        /* color: white;
+        bottom: 0;
+        opacity: 0; */
+        width : 90%;
+        position: relative;
+        z-index: 3;
+        color: white;
+        opacity: 0;
+        transform: translateY(30px);
+        transition: 0.5s all;
+        margin: auto;
+        
+        
+        margin-top: 280px;
+  }
+  .slide:hover .con {
+    
+    opacity: 1;
+    transform: translate(0);
+  }
+  .slide .con h1{
+    font-size: 45px;
+  }
+  .slide .con p{
+    font-size: 20px;
+  }
+ 
+  .slide.active {
+    width: 70%;
+    transform: scale(1);
+    opacity: 1;
+    z-index: 1;
+  }
+  
+  .slide:not(.active) {
+    transform: scale(0.8);
+    opacity: 0.5;
+    z-index: 0;
+  }
+  
+  .slides .slide {
+    display: none;
+  }
+  
+  .slides .slide.active {
+    display: block;
+  }
+  
+  .slides .slide.active + .slide, .slides .slide.active + .slide + .slide {
+    display: block;
+  }
+  
+  .slides .slide.active + .slide {
+    margin-left: -10%;
+  }
+  
+  .slides .slide.active + .slide + .slide {
+    margin-left: 10%;
+  }
+  
+  .dots {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+  }
+  
+  .dot {
+    width: 1px;
+    height: 1px;
+    border-radius: 50%;
+    /* background-color: #ccc; */
+    margin: 0 5px;
+    cursor: pointer;
+  }
+  
+  .dot.active {
+    background-color: #333;
+  }
+  
+  .pre, .nex {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    background-color: #BA0C2F;
+    color: #fff;
+    border: none;
+    
+    font-size: 16px;
+    border-radius: 50%;
+    margin: 10px; 
+    transition: .5s;
+    border: none;
+    outline: none;
+    font-weight: bold;
+    
+    /* width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #BA0C2F;
+  color: #fff;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  font-family: monospace;
+  font-weight: bold;
+  transition: .5s;
+  cursor: pointer; */
+  }
+  .pre:hover{
+    transition: 0.5sec ease-in-out;
+    background-color: white;
+    color: black;
+  }
+
+  .nex:hover{
+    background-color: white;
+    color: black;
+  }
+  
+  .pre {
+    left: 0;
+    z-index: 100;
+    
+  }
+  
+  .nex {
+    right: 0;
+    z-index: 100;
+  }
